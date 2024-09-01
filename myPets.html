@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 75%">
+    <canvas id="myChart" ></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var ctx= document.getElementById('myChart')
+    var myChart = new Chart(ctx,{
+            type:'bar',
+            data:{
+
+                labels:['Dog','Bunny','Snake','Cat','Chicken'],
+                datasets:[{
+                    labels:'# of Votes',
+                    data:[4,3,1,0,2,10],
+                    backgroundColor:[
+                        'rgba(148,127,121,0.55)',
+                        'rgba(106,108,110,0.64)',
+                        'rgba(63,152,50,0.63)',
+                        'rgba(132,146,215,0.68)',
+                        'rgba(230,239,53,0.68)',
+                    ],
+                    borderColor:[
+                        'rgb(89,77,69)',
+                        'rgb(59,61,65)',
+                        'rgb(12,65,4)',
+                        'rgb(7,65,135)',
+                        'rgb(153,157,31)',
+                    ],
+                    borderWidth:6,
+                }]
+            },
+
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                    x: {
+                        ticks: {
+                            stepSize: 2
+                        }
+                    }
+                },
+            },
+            indexAxis: 'y'
+        }
+    )
+</script>
+</body>
+</html>
